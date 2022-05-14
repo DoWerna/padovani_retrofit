@@ -1,0 +1,109 @@
+net matrix_panel.keycode_sig hm2_7i92.0.7i73.0.2.keycode => matrix_panel.keycode
+
+
+net matrix_panel.raw_out_r0c0 matrix_panel.key.r0c0 debounce.0.0.in 
+net matrix_panel.raw_out_r0c1 matrix_panel.key.r0c1 debounce.0.1.in 
+net matrix_panel.raw_out_r0c2 matrix_panel.key.r0c2 debounce.0.2.in 
+net matrix_panel.raw_out_r0c3 matrix_panel.key.r0c3 debounce.0.3.in 
+net matrix_panel.raw_out_r0c4 matrix_panel.key.r0c4 debounce.0.4.in 
+net matrix_panel.raw_out_r0c5 matrix_panel.key.r0c5 debounce.0.5.in 
+net matrix_panel.raw_out_r0c6 matrix_panel.key.r0c6 debounce.0.6.in
+net matrix_panel.raw_out_r0c7 matrix_panel.key.r0c7 debounce.0.7.in 
+net matrix_panel.raw_out_r1c0 matrix_panel.key.r1c0 debounce.0.8.in 
+net matrix_panel.raw_out_r1c1 matrix_panel.key.r1c1 debounce.0.9.in 
+net matrix_panel.raw_out_r1c2 matrix_panel.key.r1c2 debounce.0.10.in 
+net matrix_panel.raw_out_r1c3 matrix_panel.key.r1c3 debounce.0.11.in 
+net matrix_panel.raw_out_r1c4 matrix_panel.key.r1c4 debounce.0.12.in 
+net matrix_panel.raw_out_r1c5 matrix_panel.key.r1c5 debounce.0.13.in 
+net matrix_panel.raw_out_r1c6 matrix_panel.key.r1c6 debounce.0.14.in
+net matrix_panel.raw_out_r1c7 matrix_panel.key.r1c7 debounce.0.15.in 
+net matrix_panel.raw_out_r2c0 matrix_panel.key.r2c0 debounce.0.16.in 
+net matrix_panel.raw_out_r2c1 matrix_panel.key.r2c1 debounce.0.17.in 
+net matrix_panel.raw_out_r2c2 matrix_panel.key.r2c2 debounce.0.18.in 
+net matrix_panel.raw_out_r2c3 matrix_panel.key.r2c3 debounce.0.19.in 
+net matrix_panel.raw_out_r2c4 matrix_panel.key.r2c4 debounce.0.20.in 
+net matrix_panel.raw_out_r2c5 matrix_panel.key.r2c5 debounce.0.21.in 
+net matrix_panel.raw_out_r2c6 matrix_panel.key.r2c6 debounce.0.22.in  
+net matrix_panel.raw_out_r2c7 matrix_panel.key.r2c7 debounce.0.23.in
+net matrix_panel.raw_out_r3c0 matrix_panel.key.r3c0 debounce.0.24.in 
+net matrix_panel.raw_out_r3c1 matrix_panel.key.r3c1 debounce.0.25.in 
+net matrix_panel.raw_out_r3c2 matrix_panel.key.r3c2 debounce.0.26.in 
+net matrix_panel.raw_out_r3c3 matrix_panel.key.r3c3 debounce.0.27.in 
+net matrix_panel.raw_out_r3c4 matrix_panel.key.r3c4 debounce.0.28.in 
+net matrix_panel.raw_out_r3c5 matrix_panel.key.r3c5 debounce.0.29.in 
+net matrix_panel.raw_out_r3c6 matrix_panel.key.r3c6 debounce.0.30.in 
+net matrix_panel.raw_out_r3c7 matrix_panel.key.r3c7 debounce.0.31.in 
+net matrix_panel.raw_out_r4c0 matrix_panel.key.r4c0 debounce.0.32.in 
+net matrix_panel.raw_out_r4c1 matrix_panel.key.r4c1 debounce.0.33.in 
+net matrix_panel.raw_out_r4c2 matrix_panel.key.r4c2 debounce.0.34.in 
+net matrix_panel.raw_out_r4c3 matrix_panel.key.r4c3 debounce.0.35.in 
+net matrix_panel.raw_out_r4c4 matrix_panel.key.r4c4 debounce.0.36.in 
+net matrix_panel.raw_out_r4c5 matrix_panel.key.r4c5 debounce.0.37.in 
+net matrix_panel.raw_out_r4c6 matrix_panel.key.r4c6 debounce.0.38.in  
+net matrix_panel.raw_out_r4c7 matrix_panel.key.r4c7 debounce.0.39.in
+net matrix_panel.raw_out_r5c0 matrix_panel.key.r5c0 debounce.0.40.in 
+net matrix_panel.raw_out_r5c1 matrix_panel.key.r5c1 debounce.0.41.in 
+net matrix_panel.raw_out_r5c2 matrix_panel.key.r5c2 debounce.0.42.in 
+net matrix_panel.raw_out_r5c3 matrix_panel.key.r5c3 debounce.0.43.in 
+net matrix_panel.raw_out_r5c4 matrix_panel.key.r5c4 debounce.0.44.in 
+net matrix_panel.raw_out_r5c5 matrix_panel.key.r5c5 debounce.0.45.in 
+net matrix_panel.raw_out_r5c6 matrix_panel.key.r5c6 debounce.0.46.in  
+net matrix_panel.raw_out_r5c7 matrix_panel.key.r5c7 debounce.0.47.in
+net matrix_panel.raw_out_r6c3 matrix_panel.key.r6c3 debounce.0.48.in 
+net matrix_panel.raw_out_r6c4 matrix_panel.key.r6c4 debounce.0.49.in 
+net matrix_panel.raw_out_r6c5 matrix_panel.key.r6c5 debounce.1.0.in 
+
+#cooling
+
+net gmoccapy.cooling debounce.0.30.out  => toggle_flood.in 
+net coolant-flood.toggleflood  toggle_flood.out          toggle2n_flood.in 
+net coolant-flood.coolantison  halui.flood.is-on         toggle2n_flood.is-on
+net coolant-flood.setfloodon   toggle2n_flood.on         halui.flood.on 
+net coolant-flood.setflootoff  toggle2n_flood.off        halui.flood.off
+
+#  ---manual tool change signals---
+
+loadusr -W hal_manualtoolchange
+net tool-change-request     iocontrol.0.tool-change       =>  hal_manualtoolchange.change
+net tool-change-confirmed-click   or_tool-confirm.in0     <=  hal_manualtoolchange.changed
+net tool-change-confirmed-button   or_tool-confirm.in1    <=  debounce.0.1.out
+net tool-change-confirmed   iocontrol.0.tool-changed      <=  or_tool-confirm.out
+net tool-number             iocontrol.0.tool-prep-number  =>  hal_manualtoolchange.number
+net tool-prepare-loopback   iocontrol.0.tool-prepare      =>  iocontrol.0.tool-prepared
+
+
+
+#   ---F-Buttons---------------
+net gmoccapy.vbutton-0 debounce.0.0.out => gmoccapy.v-button.button-0
+net gmoccapy.vbutton-1 debounce.0.8.out => gmoccapy.v-button.button-1
+net gmoccapy.vbutton-2 debounce.0.16.out => gmoccapy.v-button.button-2
+net gmoccapy.vbutton-3 debounce.0.32.out => gmoccapy.v-button.button-3
+net gmoccapy.vbutton-4 debounce.0.24.out => gmoccapy.v-button.button-4
+net gmoccapy.vbutton-5 debounce.0.25.out => gmoccapy.v-button.button-5
+net gmoccapy.vbutton-6 debounce.0.26.out => gmoccapy.v-button.button-6
+
+net gmoccapy.hbutton-0 debounce.0.39.out => gmoccapy.h-button.button-0
+net gmoccapy.hbutton-1 debounce.0.38.out => gmoccapy.h-button.button-1
+net gmoccapy.hbutton-2 debounce.0.47.out => gmoccapy.h-button.button-2
+net gmoccapy.hbutton-3 debounce.0.46.out => gmoccapy.h-button.button-3
+net gmoccapy.hbutton-4 debounce.0.45.out => gmoccapy.h-button.button-4
+net gmoccapy.hbutton-5 debounce.0.44.out => gmoccapy.h-button.button-5
+net gmoccapy.hbutton-6 debounce.0.43.out => gmoccapy.h-button.button-6
+net gmoccapy.hbutton-7 debounce.0.42.out => gmoccapy.h-button.button-7
+net gmoccapy.hbutton-8 debounce.0.41.out => gmoccapy.h-button.button-8
+net gmoccapy.hbutton-9 debounce.0.40.out => gmoccapy.h-button.button-9
+
+#  ---Jog-Buttons-----------------
+net gmoccapy.jog.x- debounce.0.3.out => gmoccapy.jog.axis.jog-x-minus 
+net gmoccapy.jog.x+ debounce.0.35.out => gmoccapy.jog.axis.jog-x-plus 
+net gmoccapy.jog.z- debounce.0.11.out => gmoccapy.jog.axis.jog-z-minus 
+net gmoccapy.jog.z+ debounce.0.19.out => gmoccapy.jog.axis.jog-z-plus 
+
+
+
+
+
+
+
+
+

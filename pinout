@@ -1,0 +1,20 @@
+coolant hm2_7i92.0.7i77.0.0.output-08
+spindl enable      hm2_7i92.0.7i77.0.0.output-01
+
+
+
+toolconfirm  debounce.0.1.out
+flood        debounce.0.0.out
+
+
+encoder x
+tekel tk163.s.1250.5v.k1.6.ps20.ld
+
++vdc red  2
+0v black  1
+a green   8
+b gelb   6
+z blau   4
+-a braun 7
+-b pink  5
+-z white  3

@@ -1,0 +1,22 @@
+#  ---coolant signals---
+
+net coolant-mist      <=  iocontrol.0.coolant-mist
+net coolant-flood     <=  iocontrol.0.coolant-flood
+net coolant-flood  =>     hm2_7i92.0.7i77.0.0.output-08
+
+#  ---probe signal---
+
+net probe-in     =>  motion.probe-input
+
+#  ---motion control signals---
+
+net in-position               <=  motion.in-position
+net machine-is-enabled        <=  motion.motion-enabled
+
+#   Maschine ein aus
+net machine.ein hm2_7i92.0.7i77.0.0.input-08 => halui.machine.on     
+net machine.aus hm2_7i92.0.7i77.0.0.input-08-not => halui.machine.off
+net machine-is-on hm2_7i92.0.7i77.0.0.output-00
+net machine.enable_in => hm2_7i92.0.7i77.0.0.input-10 iocontrol.0.emc-enable-in 
+
+#  ---digital in / out signals---

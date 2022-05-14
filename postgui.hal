@@ -1,0 +1,8 @@
+# postgui
+source panel.hal
+
+#gmoccapy toolchange
+net tooloffset-z gmoccapy.tooloffset-z <= motion.tooloffset.z
+net tooloffset-x gmoccapy.tooloffset-x <= motion.tooloffset.x
+
+

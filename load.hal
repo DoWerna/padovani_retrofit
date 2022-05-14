@@ -1,0 +1,28 @@
+loadrt [KINS]KINEMATICS
+loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS
+loadrt hostmot2
+loadrt hm2_eth board_ip="192.168.1.121" config=" num_encoders=6 num_pwmgens=0 num_stepgens=0 sserial_port_0=000xxx" 
+setp    hm2_7i92.0.watchdog.timeout_ns 5000000
+loadrt pid names=pid.x,pid.z,pid.s
+
+loadrt matrix_kb config=8x8 names=matrix_panel 
+loadrt debounce cfg=50,2
+loadrt toggle names=toggle_flood
+loadrt toggle2nist names=toggle2n_flood
+loadrt or2 names=or_tool-confirm
+loadrt gearchange32 names=gear personality=3
+
+addf hm2_7i92.0.read          servo-thread
+addf motion-command-handler   servo-thread
+addf motion-controller        servo-thread
+addf pid.x.do-pid-calcs       servo-thread
+addf pid.z.do-pid-calcs       servo-thread
+addf pid.s.do-pid-calcs       servo-thread
+addf hm2_7i92.0.write         servo-thread
+addf matrix_panel             servo-thread
+addf debounce.0               servo-thread
+addf debounce.1               servo-thread
+addf toggle_flood             servo-thread
+addf toggle2n_flood           servo-thread
+addf or_tool-confirm          servo-thread
+addf gear            servo-thread
