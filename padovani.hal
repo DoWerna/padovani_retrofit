@@ -1,5 +1,4 @@
 source load.hal
-
 source inout.hal
 
 #*******************

@@ -66,7 +66,7 @@ net coolant-flood.setflootoff  toggle2n_flood.off        halui.flood.off
 loadusr -W hal_manualtoolchange
 net tool-change-request     iocontrol.0.tool-change       =>  hal_manualtoolchange.change
 net tool-change-confirmed-click   or_tool-confirm.in0     <=  hal_manualtoolchange.changed
-net tool-change-confirmed-button   or_tool-confirm.in1    <=  debounce.0.1.out
+net tool-change-confirmed-button   or_tool-confirm.in1    <=  debounce.0.31.out
 net tool-change-confirmed   iocontrol.0.tool-changed      <=  or_tool-confirm.out
 net tool-number             iocontrol.0.tool-prep-number  =>  hal_manualtoolchange.number
 net tool-prepare-loopback   iocontrol.0.tool-prepare      =>  iocontrol.0.tool-prepared
@@ -98,6 +98,15 @@ net gmoccapy.jog.x- debounce.0.3.out => gmoccapy.jog.axis.jog-x-minus
 net gmoccapy.jog.x+ debounce.0.35.out => gmoccapy.jog.axis.jog-x-plus 
 net gmoccapy.jog.z- debounce.0.11.out => gmoccapy.jog.axis.jog-z-minus 
 net gmoccapy.jog.z+ debounce.0.19.out => gmoccapy.jog.axis.jog-z-plus 
+
+#   ---turtle---------------
+
+net gmoccapy.turtle_button debounce.0.2.out => toggle_turtle.in 
+net gmoccapy.toggle_turtle toggle_turtle.out             gmoccapy.jog.turtle-jog 
+
+# clear enable
+net gmoccapy.clear_enbl_button debounce.0.34.out => gmoccapy.delete-message
+
 
 
 
