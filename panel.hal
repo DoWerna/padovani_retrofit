@@ -115,8 +115,8 @@ setp muxfeed.in1 0
 setp muxfeed.in2 10
 net gmoccapy.feed_0-or-100 or_feed.out halui.feed-override.count-enable
 net gmoccapy.feed_0-or-100 halui.rapid-override.count-enable
-net muxfeed  muxfeed.out conv-float-s32.0.in
-net gmoccapy.feedv conv-float-s32.0.out halui.feed-override.counts
+net muxfeed  muxfeed.out conv_feed.in
+net gmoccapy.feedv conv_feed.out halui.feed-override.counts
 net gmoccapy.feedv halui.rapid-override.counts
 ##net maho_panel.r3c5_sig-out gmoccapy.spc_feed.increase gmoccapy.spc_rapid.increase
 ##net maho_panel.r3c6_sig-out gmoccapy.spc_feed.decrease gmoccapy.spc_rapid.decrease
