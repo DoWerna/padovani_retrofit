@@ -9,8 +9,10 @@ loadrt matrix_kb config=8x8 names=matrix_panel
 loadrt debounce cfg=50,2
 loadrt toggle names=toggle_flood,toggle_turtle
 loadrt toggle2nist names=toggle2n_flood
-loadrt or2 names=or_tool-confirm
+loadrt or2 names=or_tool-confirm,or_feed
 loadrt gearchange32 names=gear personality=3
+loadrt mux8 names=muxfeed
+loadrt conv_float_s32
 
 addf hm2_7i92.0.read          servo-thread
 addf motion-command-handler   servo-thread
@@ -26,4 +28,7 @@ addf toggle_flood             servo-thread
 addf toggle_turtle             servo-thread
 addf toggle2n_flood           servo-thread
 addf or_tool-confirm          servo-thread
+addf or_feed              servo-thread
 addf gear            servo-thread
+addf muxfeed servo-thread
+addf conv-float-s32.0 servo-thread

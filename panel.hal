@@ -99,6 +99,30 @@ net gmoccapy.jog.x+ debounce.0.35.out => gmoccapy.jog.axis.jog-x-plus
 net gmoccapy.jog.z- debounce.0.11.out => gmoccapy.jog.axis.jog-z-minus 
 net gmoccapy.jog.z+ debounce.0.19.out => gmoccapy.jog.axis.jog-z-plus 
 
+#feed
+net gmoccapy.feed_0 debounce.0.23.out  #null r3c7maho_panel.r3c7_sig-out
+net gmoccapy.feed_100 debounce.0.20.out  #100  r3c4
+net gmoccapy.feed_- debounce.0.22.out  #minus r3c6
+net gmoccapy.feed_+ debounce.0.21.out  #plus  r3c5
+setp halui.feed-override.direct-value true
+setp halui.rapid-override.direct-value true
+net gmoccapy.feed_0 muxfeed.sel0 
+net gmoccapy.feed_100 muxfeed.sel1 
+net gmoccapy.feed_0 or_feed.in0 
+net gmoccapy.feed_100 or_feed.in1 
+setp muxfeed.in0 1
+setp muxfeed.in1 0
+setp muxfeed.in2 10
+net gmoccapy.feed_0-or-100 or_feed.out halui.feed-override.count-enable
+net gmoccapy.feed_0-or-100 halui.rapid-override.count-enable
+net muxfeed  muxfeed.out conv-float-s32.0.in
+net gmoccapy.feedv conv-float-s32.0.out halui.feed-override.counts
+net gmoccapy.feedv halui.rapid-override.counts
+##net maho_panel.r3c5_sig-out gmoccapy.spc_feed.increase gmoccapy.spc_rapid.increase
+##net maho_panel.r3c6_sig-out gmoccapy.spc_feed.decrease gmoccapy.spc_rapid.decrease
+net gmoccapy.feed_+ halui.feed-override.increase halui.rapid-override.increase
+net gmoccapy.feed_- halui.feed-override.decrease halui.rapid-override.decrease
+
 #   ---turtle---------------
 
 net gmoccapy.turtle_button debounce.0.2.out => toggle_turtle.in 
