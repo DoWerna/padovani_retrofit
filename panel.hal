@@ -145,20 +145,28 @@ net gmoccapy.next and_step.out halui.program.step
 
 #Pause
 net gmoccapy.pause-button debounce.0.7.out
-net gmoccapy.pause-button and_pause_1.in0 and_pause_1.in0 
-net gmoccapy.pause-on toggle2n_pause.is-on and_pause_2.in1 <= halui.program.is-paused
+net gmoccapy.pause-button and_pause_1.in0 and_pause_2.in0 
+net gmoccapy.pause-on toggle2n_pause.is-on <= halui.program.is-paused
+net gmoccapy.pause-on  and_pause_2.in1
 net gmoccapy.run-on and_pause_1.in1 <= halui.program.is-running
 net gmoccapy.pause-sig or_pause.in0 <= and_pause_2.out
 net gmoccapy.resume-sig or_pause.in1 <= and_pause_1.out
 net gmoccapy.toggle-ok toggle_pause.in <= or_pause.out
 net gmoccapy.togglesig toggle2n_pause.in <= toggle_pause.out
-net gmoccapy.toggleon halui.program.pause <= toggle2n_pause.on
+net gmoccapy.toggleon  halui.program.pause <= toggle2n_pause.on
 net gmoccapy.toggleoff halui.program.resume <= toggle2n_pause.off
 
 #Stop
 
 net gmoccapy.stop-button debounce.0.6.out  halui.program.stop
 
+#manual Mode
+
+net gmoccapy.manual-button and_manual_1.in0 debounce.0.1.out
+net gmoccapy.clear_enbl_button and_manual_1.in1
+net gmoccapy.toggle_man_in     and_manual_1.out    toggle_manual.in
+net gmoccapy.manual_mode-is-on toggle_manual.out
+net gmoccapy.manual_mode-is-on hm2_7i92.0.7i73.0.2.output-08
 
 
 
