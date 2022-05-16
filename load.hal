@@ -7,9 +7,10 @@ loadrt pid names=pid.x,pid.z,pid.s
 
 loadrt matrix_kb config=8x8 names=matrix_panel 
 loadrt debounce cfg=50,2
-loadrt toggle names=toggle_flood,toggle_turtle
-loadrt toggle2nist names=toggle2n_flood
-loadrt or2 names=or_tool-confirm,or_feed
+loadrt toggle names=toggle_flood,toggle_turtle,toggle_pause
+loadrt toggle2nist names=toggle2n_flood,toggle2n_pause
+loadrt or2 names=or_tool-confirm,or_feed,or_pause
+loadrt and2 names=and_run,and_step,and_pause_1,and_pause_2
 loadrt gearchange32 names=gear personality=3
 loadrt mux8 names=muxfeed
 loadrt conv_float_s32 names=conv_feed
@@ -27,8 +28,15 @@ addf debounce.1               servo-thread
 addf toggle_flood             servo-thread
 addf toggle_turtle             servo-thread
 addf toggle2n_flood           servo-thread
+addf toggle_pause             servo-thread
+addf toggle2n_pause           servo-thread
 addf or_tool-confirm          servo-thread
 addf or_feed              servo-thread
+addf or_pause              servo-thread
+addf and_run              servo-thread
+addf and_step              servo-thread
+addf and_pause_1              servo-thread
+addf and_pause_2              servo-thread
 addf gear            servo-thread
 addf muxfeed servo-thread
 addf conv_feed servo-thread

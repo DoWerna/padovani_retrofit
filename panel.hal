@@ -131,7 +131,33 @@ net gmoccapy.toggle_turtle toggle_turtle.out             gmoccapy.jog.turtle-jog
 # clear enable
 net gmoccapy.clear_enbl_button debounce.0.34.out => gmoccapy.delete-message
 
+#run
+net gmoccapy.run-button debounce.0.15.out
+net gmoccapy.run-button halui.mode.auto and_run.in0 
+net gmoccapy.programm-is-idle and_run.in1  halui.program.is-idle
+net gmoccapy.programm-run halui.program.run and_run.out
 
+#Step 
+net gmoccapy.step-button debounce.0.14.out
+net gmoccapy.step-button and_step.in1
+net gmoccapy.pause-on and_step.in0
+net gmoccapy.next and_step.out halui.program.step
+
+#Pause
+net gmoccapy.pause-button debounce.0.7.out
+net gmoccapy.pause-button and_pause_1.in0 and_pause_1.in0 
+net gmoccapy.pause-on toggle2n_pause.is-on and_pause_2.in1 <= halui.program.is-paused
+net gmoccapy.run-on and_pause_1.in1 <= halui.program.is-running
+net gmoccapy.pause-sig or_pause.in0 <= and_pause_2.out
+net gmoccapy.resume-sig or_pause.in1 <= and_pause_1.out
+net gmoccapy.toggle-ok toggle_pause.in <= or_pause.out
+net gmoccapy.togglesig toggle2n_pause.in <= toggle_pause.out
+net gmoccapy.toggleon halui.program.pause <= toggle2n_pause.on
+net gmoccapy.toggleoff halui.program.resume <= toggle2n_pause.off
+
+#Stop
+
+net gmoccapy.stop-button debounce.0.6.out  halui.program.stop
 
 
 
