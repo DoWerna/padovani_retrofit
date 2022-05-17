@@ -11,12 +11,13 @@ loadrt toggle names=toggle_flood,toggle_turtle,toggle_pause,toggle_manual
 loadrt toggle2nist names=toggle2n_flood,toggle2n_pause
 loadrt or2 names=or_tool-confirm,or_feed,or_pause
 loadrt and2 names=and_run,and_step,and_pause_1,and_pause_2,and_manual_1
-loadrt gearchange32 names=gear personality=3
+loadrt gearchange32 names=gear personality=2
 loadrt mux8 names=muxfeed
 loadrt conv_float_s32 names=conv_feed
 loadrt abs names=spindle_abs
 loadrt near
-loadrt limit2 names=spindle-ramp
+
+
 
 
 
@@ -51,4 +52,3 @@ addf muxfeed servo-thread
 addf conv_feed servo-thread
 addf spindle_abs         servo-thread
 addf near.0 servo-thread
-addf spindle-ramp servo-thread
