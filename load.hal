@@ -10,12 +10,15 @@ loadrt debounce cfg=50,2
 loadrt toggle names=toggle_flood,toggle_turtle,toggle_pause,toggle_manual
 loadrt toggle2nist names=toggle2n_flood,toggle2n_pause
 loadrt or2 names=or_tool-confirm,or_feed,or_pause
-loadrt and2 names=and_run,and_step,and_pause_1,and_pause_2,and_manual_1
+loadrt and2 names=and_run,and_step,and_pause_1,and_pause_2,and_manual_1,shw.and7,shw.and8,shw.and9
 loadrt gearchange32 names=gear personality=2
-loadrt mux8 names=muxfeed
+loadrt mux8 names=muxfeed,shw.step-choice
 loadrt conv_float_s32 names=conv_feed
 loadrt abs names=spindle_abs
 loadrt near
+loadrt lut5 names=shw.lock-xyz,shw.lock-step,shw.nor-xyz,shw.nor-step
+loadrt ilowpass names=shw.enc-smooth
+loadrt flipflop names=shw.ff-x,shw.ff-z,shw.ff-0001,shw.ff-001,shw.ff-01,shw.ff-xyz-lock,shw.ff-step-lock
 
 
 
@@ -47,8 +50,25 @@ addf and_step              servo-thread
 addf and_pause_1              servo-thread
 addf and_pause_2              servo-thread
 addf and_manual_1             servo-thread
+addf shw.and7 servo-thread
+addf shw.and8 servo-thread
+addf shw.and9 servo-thread
 addf gear            servo-thread
 addf muxfeed servo-thread
 addf conv_feed servo-thread
 addf spindle_abs         servo-thread
 addf near.0 servo-thread
+addf shw.lock-xyz   servo-thread
+addf shw.lock-step  servo-thread
+addf shw.nor-xyz    servo-thread
+addf shw.nor-step   servo-thread
+addf shw.enc-smooth servo-thread
+addf shw.step-choice servo-thread #mux8
+addf shw.ff-x         servo-thread
+addf shw.ff-z         servo-thread
+addf shw.ff-0001      servo-thread
+addf shw.ff-001       servo-thread
+addf shw.ff-01        servo-thread
+addf shw.ff-xyz-lock  servo-thread
+addf shw.ff-step-lock servo-thread
+
