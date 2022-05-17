@@ -134,7 +134,14 @@ setp   hm2_7i92.0.7i77.0.1.analogout5-scalemax  [SPINDLE_0]OUTPUT_SCALE
 setp   hm2_7i92.0.7i77.0.1.analogout5-minlim    [SPINDLE_0]OUTPUT_MIN_LIMIT
 setp   hm2_7i92.0.7i77.0.1.analogout5-maxlim    [SPINDLE_0]OUTPUT_MAX_LIMIT
 
-net spindle-output      => hm2_7i92.0.7i77.0.1.analogout5
+#ramp
+#net spindle-output      => hm2_7i92.0.7i77.0.1.analogout5
+setp spindle-ramp.maxv 400
+net spindle-output      => spindle-ramp.in
+net spindle-output-ramped spindle-ramp.out     => hm2_7i92.0.7i77.0.1.analogout5
+
+
+
 net spindle-enable      => hm2_7i92.0.7i77.0.1.spinena
 net spindle-enable      => hm2_7i92.0.7i77.0.0.output-01
 

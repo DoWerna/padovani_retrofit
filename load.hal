@@ -16,6 +16,7 @@ loadrt mux8 names=muxfeed
 loadrt conv_float_s32 names=conv_feed
 loadrt abs names=spindle_abs
 loadrt near
+loadrt limit2 names=spindle-ramp
 
 
 
@@ -50,3 +51,4 @@ addf muxfeed servo-thread
 addf conv_feed servo-thread
 addf spindle_abs         servo-thread
 addf near.0 servo-thread
+addf spindle-ramp servo-thread
