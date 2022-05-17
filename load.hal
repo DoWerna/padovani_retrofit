@@ -14,6 +14,12 @@ loadrt and2 names=and_run,and_step,and_pause_1,and_pause_2,and_manual_1
 loadrt gearchange32 names=gear personality=3
 loadrt mux8 names=muxfeed
 loadrt conv_float_s32 names=conv_feed
+loadrt abs names=spindle_abs
+loadrt near
+
+
+
+
 
 addf hm2_7i92.0.read          servo-thread
 addf motion-command-handler   servo-thread
@@ -42,3 +48,5 @@ addf and_manual_1             servo-thread
 addf gear            servo-thread
 addf muxfeed servo-thread
 addf conv_feed servo-thread
+addf spindle_abs         servo-thread
+addf near.0 servo-thread

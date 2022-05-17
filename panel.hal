@@ -160,6 +160,22 @@ net gmoccapy.toggleoff halui.program.resume <= toggle2n_pause.off
 
 net gmoccapy.stop-button debounce.0.6.out  halui.program.stop
 
+#spindle
+
+net spindle-manual-cw debounce.0.37.out 
+net spindle-manual-ccw debounce.0.5.out  
+net spindle-manual-stop debounce.0.13.out 
+net gmoccapy.spindle100 debounce.0.36.out gmoccapy.spindle.reset-spindle-override
+net gmoccapy.spindle+ debounce.0.12.out gmoccapy.spc_spindle.increase 
+net gmoccapy.spindle- debounce.0.4.out gmoccapy.spc_spindle.decrease 
+net spindle-vel-fb-rpm spindle_abs.in
+net gmoccapy.spindlebar spindle_abs.out gmoccapy.spindle_feedback_bar
+
+net spindle-at-speed gmoccapy.spindle_at_speed_led 
+
+
+
+
 #manual Mode
 
 net gmoccapy.manual-button and_manual_1.in0 debounce.0.1.out

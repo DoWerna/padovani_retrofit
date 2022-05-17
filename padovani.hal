@@ -169,8 +169,12 @@ net spindle-index-enable      <=>  spindle.0.index-enable
 
 # ---Setup spindle at speed signals---
 
-sets spindle-at-speed true
+#sets spindle-at-speed true
 
+net spindle-vel-cmd-rpm near.0.in1
+net spindle-vel-fb-rpm near.0.in2
+net spindle-at-speed <= near.0.out
+setp near.0.scale 1.1
 
 #******************************
 # connect miscellaneous signals
