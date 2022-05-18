@@ -182,12 +182,12 @@ net gmoccapy.manual_mode-is-on toggle_manual.out
 net gmoccapy.manual_mode-is-on hm2_7i92.0.7i73.0.2.output-08
 
 
-#       #########  ######## #     # #       #
-#           #      #        #     # #       # 
-#           #      #####    ####### #       #
-#           #           #   #     # #   #   #
-#           #            #  #     #  # # # #
-#           #      ######   #     #   #   #
+#         ######## #     # #       #
+#         #        #     # #       # 
+#         #####    ####### #       #
+#              #   #     # #   #   #
+#               #  #     #  # # # #
+#         ######   #     #   #   #
 
 
 # Code für die Tatenlogik übernommen von https://github.com/talla83/tshw-parport
@@ -235,7 +235,12 @@ net key-01   => shw.step-choice.sel2
 
 setp shw.step-choice.in1 0.001
 setp shw.step-choice.in2 0.01
-setp shw.step-choice.in4 0.1
+setp shw.step-choidanke fürs darüberschauen.
+
+Das Panel wär jetzt configuriert.
+
+Auch die simplehandwhel logic funktioniert
+ce.in4 0.1
 
 net step-choice <= shw.step-choice.out
 net step-choice => joint.0.jog-scale axis.x.jog-scale
@@ -300,7 +305,7 @@ net step-choice => joint.1.jog-scale axis.z.jog-scale
 
 
 
-net ff-data-x   <= debounce.0.48.out                 #tasten
+net ff-data-x   <= debounce.0.48.out                 #buttons
 net ff-data-z   <= debounce.0.49.out
 
 net ff-data-x   => shw.lock-xyz.in-0
@@ -322,7 +327,7 @@ net ff-clk-xyz  => shw.ff-z.clk
 net ff-data-x   => shw.ff-x.data
 net ff-data-z   => shw.ff-z.data
 
-net ff-data0001 <= debounce.0.29.out             #tasten
+net ff-data0001 <= debounce.0.29.out             #buttons
 net ff-data001  <= debounce.0.28.out
 net ff-data01   <= debounce.0.27.out
 net ff-data0001 => shw.lock-step.in-0
@@ -378,12 +383,10 @@ net key-001  <= shw.ff-001.out
 net key-01   <= shw.ff-01.out
 
 
-
-###net key-ena <= maho_panel.r2c1_sig-out    gmoccapy.clear_enbl_button         #enable taste
-net maho_panel.r2c1_sig-out => shw.and7.in1
-net maho_panel.r2c1_sig-out  => shw.and8.in1
-net maho_panel.r2c1_sig-out  => shw.and9.in1
-net maho_panel.r2c1_sig-out  => halui.mode.manual
+net gmoccapy.clear_enbl_button => shw.and7.in1     #enable button
+net gmoccapy.clear_enbl_button => shw.and8.in1
+net gmoccapy.clear_enbl_button  => shw.and9.in1
+net gmoccapy.clear_enbl_button  => halui.mode.manual
 
 
 net enc-00 <= hm2_7i92.0.7i73.0.2.enc0.count
