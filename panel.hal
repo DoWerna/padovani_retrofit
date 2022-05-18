@@ -235,12 +235,7 @@ net key-01   => shw.step-choice.sel2
 
 setp shw.step-choice.in1 0.001
 setp shw.step-choice.in2 0.01
-setp shw.step-choidanke fürs darüberschauen.
-
-Das Panel wär jetzt configuriert.
-
-Auch die simplehandwhel logic funktioniert
-ce.in4 0.1
+setp shw.step-choice.in4 0.1
 
 net step-choice <= shw.step-choice.out
 net step-choice => joint.0.jog-scale axis.x.jog-scale
