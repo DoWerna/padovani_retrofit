@@ -159,8 +159,7 @@ setp gear.scale2 1
 net spindle-output         => gear.speed-in
 net spindle-output-geared gear.speed-out    => hm2_7i92.0.7i77.0.1.analogout5
 
-setp gear.gear-number 2
-
+#setp gear.gear-number 2
 
 net spindle-enable      => hm2_7i92.0.7i77.0.1.spinena
 

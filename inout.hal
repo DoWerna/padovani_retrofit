@@ -21,3 +21,13 @@ net machine.enable_in => hm2_7i92.0.7i77.0.0.input-10 iocontrol.0.emc-enable-in
 
 #  ---digital in / out signals---
 net spindle-enable      => hm2_7i92.0.7i77.0.0.output-01
+
+
+#gangschaltung
+net gear.g0 gear.gear-0-sel hm2_7i92.0.7i77.0.0.input-00
+net gear.g1 gear.gear-1-sel hm2_7i92.0.7i77.0.0.input-01
+net gear.g2 gear.gear-2-sel hm2_7i92.0.7i77.0.0.input-02
+
+net panel.lube debounce.0.18.out hm2_7i92.0.7i77.0.0.output-09
+
+
