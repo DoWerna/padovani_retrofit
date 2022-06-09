@@ -20,3 +20,4 @@ net machine-is-on hm2_7i92.0.7i77.0.0.output-00
 net machine.enable_in => hm2_7i92.0.7i77.0.0.input-10 iocontrol.0.emc-enable-in 
 
 #  ---digital in / out signals---
+net spindle-enable      => hm2_7i92.0.7i77.0.0.output-01

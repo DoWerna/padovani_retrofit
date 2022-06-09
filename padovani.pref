@@ -22,7 +22,7 @@ view = y
 blockheight = 0.0
 reload_tool = False
 open_file = 
-screen1 = window
+screen1 = fullscreen
 x_pos = 40
 y_pos = 30
 width = 979
@@ -69,4 +69,5 @@ use_keyboard_shortcuts = False
 radius offset_axis_x = 0
 offset_axis_x = 0.0
 tool_in_spindle = 1
+offset_axis_z = 60.0
 

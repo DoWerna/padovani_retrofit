@@ -163,7 +163,7 @@ setp gear.gear-number 2
 
 
 net spindle-enable      => hm2_7i92.0.7i77.0.1.spinena
-net spindle-enable      => hm2_7i92.0.7i77.0.0.output-01
+
 
 # ---Encoder feedback signals/setup---
 
