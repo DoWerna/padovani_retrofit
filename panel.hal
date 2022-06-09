@@ -233,9 +233,21 @@ net key-0001 => shw.step-choice.sel0
 net key-001  => shw.step-choice.sel1
 net key-01   => shw.step-choice.sel2
 
-setp shw.step-choice.in1 0.001
-setp shw.step-choice.in2 0.01
-setp shw.step-choice.in4 0.1
+net key-x mux2_handrad0001.sel
+net key-x mux2_handrad001.sel
+net key-x mux2_handrad01.sel
+
+setp  mux2_handrad0001.in0  -0.001
+setp  mux2_handrad001.in0   -0.01
+setp  mux2_handrad01.in0    -0.1
+
+setp  mux2_handrad0001.in1  0.0005
+setp  mux2_handrad001.in1   0.005
+setp  mux2_handrad01.in1    0.05
+
+net shw.step0001 shw.step-choice.in1 mux2_handrad0001.out
+net shw.step001 shw.step-choice.in2 mux2_handrad001.out
+net shw.step01 shw.step-choice.in4 mux2_handrad01.out
 
 net step-choice <= shw.step-choice.out
 net step-choice => joint.0.jog-scale axis.x.jog-scale

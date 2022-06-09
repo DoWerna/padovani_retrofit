@@ -19,6 +19,8 @@ loadrt near
 loadrt lut5 names=shw.lock-xyz,shw.lock-step,shw.nor-xyz,shw.nor-step
 loadrt ilowpass names=shw.enc-smooth
 loadrt flipflop names=shw.ff-x,shw.ff-z,shw.ff-0001,shw.ff-001,shw.ff-01,shw.ff-xyz-lock,shw.ff-step-lock
+loadrt mux2 names=mux2_handrad01,mux2_handrad001,mux2_handrad0001,
+
 
 
 
@@ -71,4 +73,7 @@ addf shw.ff-001       servo-thread
 addf shw.ff-01        servo-thread
 addf shw.ff-xyz-lock  servo-thread
 addf shw.ff-step-lock servo-thread
+addf mux2_handrad01             servo-thread
+addf mux2_handrad001             servo-thread
+addf mux2_handrad0001             servo-thread
 
