@@ -12,7 +12,6 @@ pin out bit min-lim "Indicates that the minimum limitation is active";
 pin out bit max-lim "Indicates that the maximum limitation is active";
 pin in unsigned gear-number "Gear selection as a numeric";
 pin out float speed-filtered "Speed command to display, limited and absolute";
-pin out float speed4spindle "Speed command for spindle at speed comparson";
 pin out float accel-limit "Acceleration limit for the selected gear";
 param rw float min#[32: personality+1] = 0 "Minimum allowed speed in gear range N";
 param rw float max#[32 : personality+1] = 100000 "Maximum allowed speed in gear range N";
@@ -65,11 +64,6 @@ FUNCTION(_) {
         min_lim = 1; max_lim = 0;
         speed_filtered = min(gear);}
     else { min_lim = 0; max_lim = 0; }
-    
-    if (speed_in < 0 ) {
-       speed4spindle = speed_filtered * -1; }
-    else { speed4spindle = speed_filtered; }
-    
     
     speed_target =  speed_filtered * ((scale(gear) != 0)? scale(gear) : 1)
     *((speed_in < 0)? -1 : 1) ;

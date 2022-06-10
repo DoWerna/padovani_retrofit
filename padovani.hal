@@ -140,9 +140,9 @@ setp   hm2_7i92.0.7i77.0.1.analogout5-maxlim    [SPINDLE_0]OUTPUT_MAX_LIMIT
 
 #gear
 
-setp gear.acc0 2000
-setp gear.acc1 2000
-setp gear.acc2 2000
+setp gear.acc0 0
+setp gear.acc1 0
+setp gear.acc2 0
 
 setp gear.max0 170
 setp gear.max1 610
@@ -197,10 +197,11 @@ net spindle-index-enable      <=>  spindle.0.index-enable
 
 #sets spindle-at-speed true
 
-net spindle-vel-cmd-rpm near.0.in1
+#net spindle-vel-cmd-rpm near.0.in1
+net spindle-sign-filtered gear.speed4spindle near.0.in1
 net spindle-vel-fb-rpm near.0.in2
 net spindle-at-speed <= near.0.out
-setp near.0.scale 1.1
+setp near.0.scale 1.15
 
 #******************************
 # connect miscellaneous signals
