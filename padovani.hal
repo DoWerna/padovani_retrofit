@@ -30,8 +30,8 @@ setp   hm2_7i92.0.7i77.0.1.analogout0-maxlim    [JOINT_0]OUTPUT_MAX_LIMIT
 
 net x-output     => hm2_7i92.0.7i77.0.1.analogout0
 net x-pos-cmd    <= joint.0.motor-pos-cmd
-net x-enable     <= joint.0.amp-enable-out
-# enable _all_ sserial pwmgens
+#net x-enable     <= joint.0.amp-enable-out   #auskommentiert für manualmode
+## enable _all_ sserial pwmgens
 net x-enable   => hm2_7i92.0.7i77.0.1.analogena
 
 # ---Encoder feedback signals/setup---
@@ -227,5 +227,31 @@ net spindle-manual-stop   halui.spindle.0.stop
 net machine-is-on         halui.machine.is-on
 net jog-speed             halui.axis.jog-speed
 net MDI-mode              halui.mode.is-mdi
+
+#******************************
+# manualmode
+#******************************
+
+
+net gmoccapy.manual_mode-is-on not_manualmode.in
+net gmoccapy.manual_mode-is-on edge_manualmode.in 
+net gmoccapy.manual_mode-is-on mux2_manualmode_x.sel
+net gmoccapy.manual_mode-is-on mux2_manualmode_z.sel
+
+net gmoccapy.manual_mode-is-off not_manualmode.out
+net gmoccapy.manual_mode-is-off and2_manualmode.in1
+
+net manualmode.xenabled and2_manualmode.in0 joint.0.amp-enable-out
+
+net x-enable <= and2_manualmode.out
+
+setp mux2_manualmode_x.in0 0.1
+setp mux2_manualmode_x.in1 2000
+setp mux2_manualmode_z.in0 0.1
+setp mux2_manualmode_z.in1 2000
+
+
+setp edge_manualmode.in-edge true
+net maschine.aus edge_manualmode.out
 
 

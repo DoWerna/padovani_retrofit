@@ -5,4 +5,8 @@ source panel.hal
 net tooloffset-z gmoccapy.tooloffset-z <= motion.tooloffset.z
 net tooloffset-x gmoccapy.tooloffset-x <= motion.tooloffset.x
 
+#manualmode
+net manualmode.ferror_x ini.0.min_ferror mux2_manualmode_x.out
+net manualmode.ferror_z ini.1.min_ferror mux2_manualmode_z.out
+
 

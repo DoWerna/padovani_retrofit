@@ -10,7 +10,7 @@ loadrt debounce cfg=50,2
 loadrt toggle names=toggle_flood,toggle_turtle,toggle_pause,toggle_manual
 loadrt toggle2nist names=toggle2n_flood,toggle2n_pause
 loadrt or2 names=or_tool-confirm,or_feed,or_pause
-loadrt and2 names=and_run,and_step,and_pause_1,and_pause_2,and_manual_1,shw.and7,shw.and8,shw.and9
+loadrt and2 names=and_run,and_step,and_pause_1,and_pause_2,and_manual_1,shw.and7,shw.and8,shw.and9,and2_manualmode
 loadrt gearchange32 names=gear personality=2
 loadrt mux8 names=muxfeed,shw.step-choice
 loadrt conv_float_s32 names=conv_feed
@@ -19,7 +19,10 @@ loadrt near
 loadrt lut5 names=shw.lock-xyz,shw.lock-step,shw.nor-xyz,shw.nor-step
 loadrt ilowpass names=shw.enc-smooth
 loadrt flipflop names=shw.ff-x,shw.ff-z,shw.ff-0001,shw.ff-001,shw.ff-01,shw.ff-xyz-lock,shw.ff-step-lock
-loadrt mux2 names=mux2_handrad01,mux2_handrad001,mux2_handrad0001,
+loadrt mux2 names=mux2_handrad01,mux2_handrad001,mux2_handrad0001,mux2_manualmode_x,mux2_manualmode_z
+loadrt edge names=edge_manualmode
+loadrt not  names=not_manualmode
+
 
 
 
@@ -52,6 +55,7 @@ addf and_step              servo-thread
 addf and_pause_1              servo-thread
 addf and_pause_2              servo-thread
 addf and_manual_1             servo-thread
+addf and2_manualmode             servo-thread
 addf shw.and7 servo-thread
 addf shw.and8 servo-thread
 addf shw.and9 servo-thread
@@ -76,4 +80,9 @@ addf shw.ff-step-lock servo-thread
 addf mux2_handrad01             servo-thread
 addf mux2_handrad001             servo-thread
 addf mux2_handrad0001             servo-thread
+addf mux2_manualmode_x             servo-thread
+addf mux2_manualmode_z             servo-thread
+addf edge_manualmode             servo-thread
+addf not_manualmode              servo-thread
+
 
