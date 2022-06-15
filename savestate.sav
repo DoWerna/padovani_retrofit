@@ -4,14 +4,14 @@
 	signature = 10614b72d8945308102d29d38e799e8fa8b30189
 [vars]
 [widgets]
-	turn.sf = 45.0
+	turn.sf = 200.0
 	thread.pitch = 0.0
-	turn.tool = 0.0
+	turn.tool = 1.0
 	turn.angle = 0.0
 	chamfer.bo = True
 	face.tool = 0.0
 	chamfer.sf = 0.0
-	turn.cut = 0.15
+	turn.cut = 0.2
 	bore.angle = 0.0
 	radius.bo = False
 	chamfer.fi = False
@@ -20,23 +20,23 @@
 	radius.sf = 0.0
 	chamfer.fo = False
 	bore.z = 0.0
-	bore.feed = 0.0
+	bore.feed = 0.1
 	thread.internal = False
 	bore.tool = 0.0
-	thread.sf = 45.0
-	turn.rad = 0.0
+	thread.sf = 200.0
+	turn.rad = 8.0
 	bore.sf = 0.0
-	turn.x = 15.0
-	turn.z = 1.0
+	turn.x = 90.0
+	turn.z = 30.0
 	face.z = 0.0
 	face.x = 0.0
 	face.feed = 0.0
-	thread.tool = 0.0
+	thread.tool = 1.0
 	radius.x = 0.0
 	radius.z = 0.0
 	face.cut = 0.0
 	radius.rad = 0.0
-	turn.feed = 0.0
+	turn.feed = 0.1
 	bore.x = 0.0
 	thread.z = 0.0
 	face.angle = 0.0
@@ -50,4 +50,4 @@
 	bore.rad = 0.0
 	thread.external = True
 	radius.fi = True
-# last update  by gladevcp.persistence.save_state() on Fri Jun 10 14:57:17 2022 
+# last update  by gladevcp.persistence.save_state() on Mon Jun 13 17:21:41 2022 

@@ -69,6 +69,6 @@ use_keyboard_shortcuts = False
 radius offset_axis_x = 0
 offset_axis_x = 98.0
 tool_in_spindle = 1
-offset_axis_z = 10.0
+offset_axis_z = 50.0
 diameter offset_axis_x = 0
 
