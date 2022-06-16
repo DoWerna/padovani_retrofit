@@ -51,7 +51,7 @@ net x-pos-rawcounts        <=  hm2_7i92.0.encoder.00.rawcounts
 
 # ---setup home / limit switch signals---
 
-net x-home-sw     =>  joint.0.home-sw-in
+net x-home-sw     hm2_7i92.0.7i77.0.0.input-03 =>  joint.0.home-sw-in
 net x-neg-limit     =>  joint.0.neg-lim-sw-in
 net x-pos-limit     =>  joint.0.pos-lim-sw-in
 
